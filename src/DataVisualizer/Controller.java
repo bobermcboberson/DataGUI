@@ -1,4 +1,4 @@
-package sample;
+package DataVisualizer;
 
 public class Controller {
 }
