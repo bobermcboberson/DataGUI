@@ -3,14 +3,14 @@ package DataVisualizer;
 import java.io.File;
 import java.util.Scanner;
 
-public class BestSellingGame extends BestSelling {
+public class BestSellingGames extends BestSelling {
 
     // Fields
     private String Publisher;
     private String Platform;
 
     // Constructor
-    BestSellingGame(int ranking, String name, int unitSold, String platform, String releaseDate, String creator, String publisher) {
+    BestSellingGames(int ranking, String name, int unitSold, String platform, String releaseDate, String creator, String publisher) {
         super(ranking, name, unitSold, releaseDate, creator);
         Platform = platform;
         Publisher = publisher;
@@ -63,7 +63,7 @@ public class BestSellingGame extends BestSelling {
             String developer = lineScanner.next();
             String publisher = lineScanner.next();
 
-            BestSellingGame bestSellingGame = new BestSellingGame(ranking, title, sales, platform, releaseDate, developer, publisher);
+            BestSellingGames bestSellingGame = new BestSellingGames(ranking, title, sales, platform, releaseDate, developer, publisher);
         }
 
     }
