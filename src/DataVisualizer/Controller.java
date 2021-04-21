@@ -2,6 +2,8 @@ package DataVisualizer;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.util.ArrayList;
 
 public class Controller {
@@ -21,5 +23,13 @@ public class Controller {
     public void initialize() {
         BestSellingConsole.read("BestSellingConsoleData");
         BestSelling.describeAll();
+
+        GamesRank.setCellValueFactory(new PropertyValueFactory<>("Rank"));
+        GameName.setCellValueFactory(new PropertyValueFactory<>("Game"));
+        GameSold.setCellValueFactory(new PropertyValueFactory<>("Unit Sold"));
+        GamePlat.setCellValueFactory(new PropertyValueFactory<>("Platform"));
+        GameDate.setCellValueFactory(new PropertyValueFactory<>("Release Date"));
+        GamePublish.setCellValueFactory(new PropertyValueFactory<>("Publisher"));
+        GameDev.setCellValueFactory(new PropertyValueFactory<>("Developer"));
     }
 }
