@@ -17,5 +17,8 @@ public class Controller {
     public TableView BestSellingData;
 
     // Methods
-
+    public void initialize(){
+        BestSellingConsole.read("BestSellingConsoleData");
+        BestSelling.describeAll();
+    }
 }

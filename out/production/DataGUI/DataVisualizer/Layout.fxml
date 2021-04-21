@@ -15,7 +15,7 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="600.0">
+                        <TableView fx:id="BestSellingConsoleTableView" prefHeight="200.0" prefWidth="600.0">
                           <columns>
                             <TableColumn prefWidth="75.0" text="Rank" />
                             <TableColumn prefWidth="75.0" text="Console" />
@@ -32,15 +32,15 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="600.0">
+                        <TableView fx:id="BestSellingGameTableView" prefHeight="200.0" prefWidth="600.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Rank" />
-                            <TableColumn prefWidth="75.0" text="Game" />
-                              <TableColumn prefWidth="75.0" text="Unit Sold" />
-                              <TableColumn prefWidth="75.0" text="Platform" />
-                              <TableColumn prefWidth="100.0" text="Release Date" />
-                              <TableColumn prefWidth="100.0" text="Publisher" />
-                              <TableColumn prefWidth="100.0" text="Developer" />
+                            <TableColumn fx:id="GamesRank" prefWidth="75.0" text="Rank" />
+                            <TableColumn fx:id="GameName" prefWidth="75.0" text="Game" />
+                              <TableColumn fx:id="GameSold" prefWidth="75.0" text="Unit Sold" />
+                              <TableColumn fx:id="GamePlat" prefWidth="75.0" text="Platform" />
+                              <TableColumn fx:id="GameDate" prefWidth="100.0" text="Release Date" />
+                              <TableColumn fx:id="GamePublish" prefWidth="100.0" text="Publisher" />
+                              <TableColumn fx:id="GameDev" prefWidth="100.0" text="Developer" />
                           </columns>
                         </TableView>
                      </children>
@@ -51,7 +51,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="600.0">
+                        <TableView fx:id="BestSellingData" prefHeight="200.0" prefWidth="600.0">
                           <columns>
                             <TableColumn prefWidth="75.0" text="C1" />
                             <TableColumn prefWidth="75.0" text="C2" />

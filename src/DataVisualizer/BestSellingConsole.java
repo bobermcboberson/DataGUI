@@ -6,31 +6,10 @@ import java.util.Scanner;
 public class BestSellingConsole extends BestSelling {
 
     // Fields
-    private String ConsoleName;
-    private String BestSellingGame;
 
-    // Getters and Setters
-    public String getConsoleName() {
-        return ConsoleName;
-    }
 
-    public void setConsoleName(String consoleName) {
-        ConsoleName = consoleName;
-    }
-
-    public String getBestSellingGame() {
-        return BestSellingGame;
-    }
-
-    public void setBestSellingGame(String bestSellingGame) {
-        BestSellingGame = bestSellingGame;
-    }
-
-    // Constructor
-    public BestSellingConsole(int ranking, String name, int unitSold, String releaseDate, String creator, String consoleName, String bestSellingGame) {
+    public BestSellingConsole(int ranking, String name, int unitSold, String releaseDate, String creator) {
         super(ranking, name, unitSold, releaseDate, creator);
-        ConsoleName = consoleName;
-        BestSellingGame = bestSellingGame;
     }
 
     // Methods
@@ -67,6 +46,8 @@ public class BestSellingConsole extends BestSelling {
             String Companyname = lineScanner.next();
             int year = lineScanner.nextInt();
             String salenumbers = lineScanner.next();
+            BestSellingConsole console = new BestSellingConsole(ranking, Consolename, year, Companyname, salenumbers);
+            System.out.println(console);
         }
 
     }
