@@ -1,28 +1,53 @@
 package DataVisualizer;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BestSellingGames extends BestSelling {
 
     // Fields
+    private static Controller myController;
     private String Publisher;
     private String Platform;
+    private static ArrayList<BestSellingGames> games;
 
     // Constructor
     BestSellingGames(int ranking, String name, int unitSold, String platform, String releaseDate, String creator, String publisher) {
         super(ranking, name, unitSold, releaseDate, creator);
         Platform = platform;
         Publisher = publisher;
+
+        // Arraylist
+        if (games == null) {
+            games = new ArrayList<BestSellingGames>();
+        }
+        games.add(this);
     }
 
     // Getters and Setters
+    public static Controller getMyController() {
+        return myController;
+    }
+
+    public static void setMyController(Controller myController) {
+        BestSellingGames.myController = myController;
+    }
+
     public String getPublisher() {
         return Publisher;
     }
 
     public void setPublisher(String publisher) {
         Publisher = publisher;
+    }
+
+    public static ArrayList<BestSellingGames> getGames() {
+        return games;
+    }
+
+    public static void setGames(ArrayList<BestSellingGames> games) {
+        BestSellingGames.games = games;
     }
 
     // Methods
@@ -66,5 +91,10 @@ public class BestSellingGames extends BestSelling {
             BestSellingGames bestSellingGame = new BestSellingGames(ranking, title, sales, platform, releaseDate, developer, publisher);
         }
 
+    }
+
+    static void initialize() {
+        read("BestSellingGamesData");
+        getMyController().updateGameDataUI();
     }
 }

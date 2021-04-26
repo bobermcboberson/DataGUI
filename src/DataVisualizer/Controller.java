@@ -4,12 +4,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Controller {
     // Fields
     public TableView BestSellingConsoleTableView;
-    public TableView BestSellingGameTableView;
+    public TableView<BestSellingGames> BestSellingGameTableView;
     public TableColumn<BestSellingGames, Integer> GamesRank;
     public TableColumn<BestSellingGames, String> GameName;
     public TableColumn<BestSellingGames, Integer> GameSold;
@@ -21,8 +22,7 @@ public class Controller {
 
     // Methods
     public void initialize() {
-        BestSellingConsole.read("BestSellingConsoleData");
-        BestSelling.describeAll();
+        BestSellingGames.setMyController(this);
 
         GamesRank.setCellValueFactory(new PropertyValueFactory<>("Rank"));
         GameName.setCellValueFactory(new PropertyValueFactory<>("Game"));
@@ -31,5 +31,17 @@ public class Controller {
         GameDate.setCellValueFactory(new PropertyValueFactory<>("Release Date"));
         GamePublish.setCellValueFactory(new PropertyValueFactory<>("Publisher"));
         GameDev.setCellValueFactory(new PropertyValueFactory<>("Developer"));
+
+        BestSellingGames.initialize();
+    }
+
+    void updateGameDataUI() {
+        BestSellingGameTableView.getItems().clear();
+        ArrayList<BestSellingGames> allGames = BestSellingGames.getGames();
+        if (allGames != null) {
+            allGames.forEach(game -> {
+                BestSellingGameTableView.getItems().add(game);
+            });
+        }
     }
 }

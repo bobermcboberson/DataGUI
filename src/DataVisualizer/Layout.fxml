@@ -11,7 +11,7 @@
    <children>
       <Accordion>
         <panes>
-          <TitledPane animated="false" text="BestSellingConsoleData">
+          <TitledPane animated="false" prefHeight="878.0" prefWidth="668.0" text="BestSellingConsoleData">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -28,11 +28,11 @@
                   </AnchorPane>
                </content>
           </TitledPane>
-          <TitledPane animated="false" text="BestSellingGamesData">
+          <TitledPane animated="false" prefHeight="998.0" prefWidth="668.0" text="BestSellingGamesData">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="BestSellingGameTableView" prefHeight="200.0" prefWidth="600.0">
+                        <TableView fx:id="BestSellingGameTableView" prefHeight="827.0" prefWidth="600.0">
                           <columns>
                             <TableColumn fx:id="GamesRank" prefWidth="75.0" text="Rank" />
                             <TableColumn fx:id="GameName" prefWidth="75.0" text="Game" />
@@ -47,7 +47,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-          <TitledPane animated="false" text="BestSelling (WIP)">
+          <TitledPane animated="false" prefHeight="828.0" prefWidth="668.0" text="BestSelling (WIP)">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
