@@ -24,13 +24,13 @@ public class Controller {
     public void initialize() {
         BestSellingGames.setMyController(this);
 
-        GamesRank.setCellValueFactory(new PropertyValueFactory<>("Rank"));
-        GameName.setCellValueFactory(new PropertyValueFactory<>("Game"));
-        GameSold.setCellValueFactory(new PropertyValueFactory<>("Unit Sold"));
-        GamePlat.setCellValueFactory(new PropertyValueFactory<>("Platform"));
-        GameDate.setCellValueFactory(new PropertyValueFactory<>("Release Date"));
-        GamePublish.setCellValueFactory(new PropertyValueFactory<>("Publisher"));
-        GameDev.setCellValueFactory(new PropertyValueFactory<>("Developer"));
+        GamesRank.setCellValueFactory(new PropertyValueFactory<>("ranking"));
+        GameName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        GameSold.setCellValueFactory(new PropertyValueFactory<>("unitSold"));
+        GamePlat.setCellValueFactory(new PropertyValueFactory<>("platform"));
+        GameDate.setCellValueFactory(new PropertyValueFactory<>("releaseDate"));
+        GamePublish.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+        GameDev.setCellValueFactory(new PropertyValueFactory<>("creator"));
 
         BestSellingGames.initialize();
     }

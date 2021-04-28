@@ -11,7 +11,7 @@
    <children>
       <Accordion>
         <panes>
-          <TitledPane animated="false" text="BestSellingConsoleData">
+          <TitledPane animated="false" prefHeight="878.0" prefWidth="668.0" text="BestSellingConsoleData">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -28,16 +28,16 @@
                   </AnchorPane>
                </content>
           </TitledPane>
-          <TitledPane animated="false" text="BestSellingGamesData">
+          <TitledPane animated="false" prefHeight="998.0" prefWidth="668.0" text="BestSellingGamesData">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="BestSellingGameTableView" prefHeight="200.0" prefWidth="600.0">
+                        <TableView fx:id="BestSellingGameTableView" prefHeight="1000.0" prefWidth="1000.0">
                           <columns>
-                            <TableColumn fx:id="GamesRank" prefWidth="75.0" text="Rank" />
-                            <TableColumn fx:id="GameName" prefWidth="75.0" text="Game" />
-                              <TableColumn fx:id="GameSold" prefWidth="75.0" text="Unit Sold" />
-                              <TableColumn fx:id="GamePlat" prefWidth="75.0" text="Platform" />
+                            <TableColumn fx:id="GamesRank" prefWidth="100.0" text="Rank" />
+                            <TableColumn fx:id="GameName" prefWidth="100.0" text="Game" />
+                              <TableColumn fx:id="GameSold" prefWidth="100.0" text="Unit Sold" />
+                              <TableColumn fx:id="GamePlat" prefWidth="100.0" text="Platform" />
                               <TableColumn fx:id="GameDate" prefWidth="100.0" text="Release Date" />
                               <TableColumn fx:id="GamePublish" prefWidth="100.0" text="Publisher" />
                               <TableColumn fx:id="GameDev" prefWidth="100.0" text="Developer" />
@@ -47,7 +47,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-          <TitledPane animated="false" text="BestSelling (WIP)">
+          <TitledPane animated="false" prefHeight="828.0" prefWidth="668.0" text="BestSelling (WIP)">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

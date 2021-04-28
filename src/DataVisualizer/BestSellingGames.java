@@ -38,6 +38,14 @@ public class BestSellingGames extends BestSelling {
         return Publisher;
     }
 
+    public String getPlatform() {
+        return Platform;
+    }
+
+    public void setPlatform(String platform) {
+        Platform = platform;
+    }
+
     public void setPublisher(String publisher) {
         Publisher = publisher;
     }
