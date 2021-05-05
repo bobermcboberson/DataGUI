@@ -1,15 +1,37 @@
 package DataVisualizer;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BestSellingConsole extends BestSelling {
 
     // Fields
+static Controller MyControl;
+static ArrayList<BestSellingConsole> AllConsole;
 
+    public static ArrayList<BestSellingConsole> getAllConsole() {
+        return AllConsole;
+    }
+
+    public static void setAllConsole(ArrayList<BestSellingConsole> allConsole) {
+        AllConsole = allConsole;
+    }
+
+    public static Controller getMyControl() {
+        return MyControl;
+    }
+
+    public static void setMyControl(Controller myControl) {
+        MyControl = myControl;
+    }
 
     public BestSellingConsole(int ranking, String name, int unitSold, String releaseDate, String creator) {
         super(ranking, name, unitSold, releaseDate, creator);
+        if (AllConsole == null) {
+            AllConsole = new ArrayList<BestSellingConsole>();
+        }
+        AllConsole.add(this);
     }
 
     // Methods
@@ -44,13 +66,18 @@ public class BestSellingConsole extends BestSelling {
             int ranking = lineScanner.nextInt();
             String Consolename = lineScanner.next();
             String Companyname = lineScanner.next();
-            int year = lineScanner.nextInt();
-            String salenumbers = lineScanner.next();
-            BestSellingConsole console = new BestSellingConsole(ranking, Consolename, year, Companyname, salenumbers);
+            String year = lineScanner.next();
+            int salenumbers = lineScanner.nextInt();
+            BestSellingConsole console = new BestSellingConsole(ranking, Consolename, salenumbers, year, Companyname);
             System.out.println(console);
-        }
 
+        }
     }
-}
+       static void initialize() {
+       read("BestSellingConsoleData");
+       MyControl.updateConsoleDataUI();
+        }
+    }
+
 
 

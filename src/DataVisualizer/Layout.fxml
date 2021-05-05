@@ -15,13 +15,13 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="BestSellingConsoleTableView" prefHeight="200.0" prefWidth="600.0">
+                        <TableView fx:id="BestSellingConsoleTableView" prefHeight="374.0" prefWidth="668.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Rank" />
-                            <TableColumn prefWidth="75.0" text="Console" />
-                              <TableColumn prefWidth="75.0" text="Company" />
-                              <TableColumn prefWidth="75.0" text="Year" />
-                              <TableColumn prefWidth="75.0" text="Units Sold" />
+                            <TableColumn fx:id="ConsoleRank" prefWidth="75.0" text="Rank" />
+                            <TableColumn fx:id="ConsoleName" prefWidth="119.0" text="Console" />
+                              <TableColumn fx:id="Company" prefWidth="131.0" text="Company" />
+                              <TableColumn fx:id="Year" prefWidth="177.0" text="Year" />
+                              <TableColumn fx:id="Unitsold" prefWidth="165.0" text="Units Sold" />
                           </columns>
                         </TableView>
                      </children>

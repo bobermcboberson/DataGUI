@@ -11,7 +11,7 @@ public class DataVisualizer extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Layout.fxml"));
         primaryStage.setTitle("Fudayl and Alonso");
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        primaryStage.setScene(new Scene(root, 668, 400));
         primaryStage.show();
     }
 

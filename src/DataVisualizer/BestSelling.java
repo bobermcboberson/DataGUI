@@ -18,6 +18,7 @@ public class BestSelling {
         this.unitSold = unitSold;
         this.releaseDate = releaseDate;
         this.creator = creator;
+        this.ranking = ranking;
 
         if (sales == null) {
             sales = new ArrayList<BestSelling>();
