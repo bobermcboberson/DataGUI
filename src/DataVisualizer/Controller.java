@@ -4,12 +4,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Controller {
     // Fields
-    public TableView BestSellingConsoleTableView;
+    public TableView<BestSellingConsole> BestSellingConsoleTableView;
     public TableView<BestSellingGames> BestSellingGameTableView;
     public TableColumn<BestSellingGames, Integer> GamesRank;
     public TableColumn<BestSellingGames, String> GameName;
@@ -18,7 +17,7 @@ public class Controller {
     public TableColumn<BestSellingGames, String> GameDate;
     public TableColumn<BestSellingGames, String> GamePublish;
     public TableColumn<BestSellingGames, String> GameDev;
-    public TableView BestSellingData;
+    public TableView<BestSelling> BestSellingData;
 
     // Methods
     public void initialize() {
@@ -39,9 +38,7 @@ public class Controller {
         BestSellingGameTableView.getItems().clear();
         ArrayList<BestSellingGames> allGames = BestSellingGames.getGames();
         if (allGames != null) {
-            allGames.forEach(game -> {
-                BestSellingGameTableView.getItems().add(game);
-            });
+            allGames.forEach(game -> BestSellingGameTableView.getItems().add(game));
         }
     }
 }

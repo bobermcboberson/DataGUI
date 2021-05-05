@@ -1,10 +1,13 @@
 package DataVisualizer;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BestSellingGames extends BestSelling {
+public class BestSellingGames extends BestSelling implements Serializable {
 
     // Fields
     private static Controller myController;
@@ -20,7 +23,7 @@ public class BestSellingGames extends BestSelling {
 
         // Arraylist
         if (games == null) {
-            games = new ArrayList<BestSellingGames>();
+            games = new ArrayList<>();
         }
         games.add(this);
     }
@@ -104,5 +107,18 @@ public class BestSellingGames extends BestSelling {
     static void initialize() {
         read("BestSellingGamesData");
         getMyController().updateGameDataUI();
+    }
+
+    static public void save() {
+        if (games != null && !BestSellingGames.games.isEmpty()) {
+            try {
+                File saveModelFile = new File("serializedBestSellingGames");
+                FileOutputStream savedModelFileStream = new FileOutputStream(saveModelFile);
+                ObjectOutputStream out = new ObjectOutputStream(savedModelFileStream);
+                out.writeObject(games);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }
