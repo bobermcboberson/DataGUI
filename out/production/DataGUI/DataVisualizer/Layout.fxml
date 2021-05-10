@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DataVisualizer.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DataVisualizer.Controller">
    <children>
       <Accordion>
         <panes>
@@ -32,17 +34,28 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="BestSellingGameTableView" prefHeight="1000.0" prefWidth="1000.0">
-                          <columns>
-                            <TableColumn fx:id="GamesRank" prefWidth="100.0" text="Rank" />
-                            <TableColumn fx:id="GameName" prefWidth="100.0" text="Game" />
-                              <TableColumn fx:id="GameSold" prefWidth="100.0" text="Unit Sold" />
-                              <TableColumn fx:id="GamePlat" prefWidth="100.0" text="Platform" />
-                              <TableColumn fx:id="GameDate" prefWidth="100.0" text="Release Date" />
-                              <TableColumn fx:id="GamePublish" prefWidth="100.0" text="Publisher" />
-                              <TableColumn fx:id="GameDev" prefWidth="100.0" text="Developer" />
-                          </columns>
-                        </TableView>
+                        <HBox prefHeight="350.0" prefWidth="1000.0">
+                           <children>
+                              <TableView fx:id="BestSellingGameTableView" prefHeight="350.0" prefWidth="700.0">
+                                <columns>
+                                  <TableColumn fx:id="GamesRank" prefWidth="100.0" text="Rank" />
+                                  <TableColumn fx:id="GameName" prefWidth="100.0" text="Game" />
+                                    <TableColumn fx:id="GameSold" prefWidth="100.0" text="Unit Sold" />
+                                    <TableColumn fx:id="GamePlat" prefWidth="100.0" text="Platform" />
+                                    <TableColumn fx:id="GameDate" prefWidth="100.0" text="Release Date" />
+                                    <TableColumn fx:id="GamePublish" prefWidth="100.0" text="Publisher" />
+                                    <TableColumn fx:id="GameDev" prefWidth="100.0" text="Developer" />
+                                </columns>
+                              </TableView>
+                              <VBox prefHeight="350.0" prefWidth="300.0">
+                                 <children>
+                                    <Button fx:id="gameSaveButton" mnemonicParsing="false" onAction="#gameSave" prefHeight="25.0" prefWidth="99.0" text="Save" />
+                                    <Button fx:id="gameRestoreButton" mnemonicParsing="false" onAction="#gameRestore" prefHeight="25.0" prefWidth="100.0" text="Restore" />
+                                    <Button fx:id="gameImportButton" mnemonicParsing="false" onAction="#gameImport" prefHeight="25.0" prefWidth="100.0" text="Import" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
                      </children>
                   </AnchorPane>
             </content>

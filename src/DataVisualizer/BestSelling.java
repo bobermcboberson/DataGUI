@@ -1,8 +1,9 @@
 package DataVisualizer;
 
+import java.io.*;
 import java.util.ArrayList;
 
-public class BestSelling {
+public class BestSelling implements Serializable {
 
     // Fields
     private static ArrayList<BestSelling> sales;
@@ -19,8 +20,9 @@ public class BestSelling {
         this.releaseDate = releaseDate;
         this.creator = creator;
 
+        // Arraylist
         if (sales == null) {
-            sales = new ArrayList<BestSelling>();
+            sales = new ArrayList<>();
         }
         sales.add(this);
     }
@@ -71,4 +73,34 @@ public class BestSelling {
             System.out.println(sales.toString());
         });
     }
-}
+    
+    // Methods
+    //static public void save() {
+    //    if (sales != null && !sales.isEmpty()) {
+    //        try {
+    //            File savedFile = new File("serializedAllSales");
+    //            FileOutputStream savedFileStream = new FileOutputStream(savedFile);
+    //            ObjectOutputStream out = new ObjectOutputStream(savedFileStream);
+    //            out.writeObject(sales);
+    //        } catch (Exception ex) {
+    //            ex.printStackTrace();
+    //        }
+    //    }
+    //}
+
+    //static public boolean restore() {
+    //    File savedFile = new File("serializedAllSales");
+    //    if (savedFile.exists())
+    //        try {
+    //            FileInputStream savedFileStream = new FileInputStream(savedFile);
+    //            ObjectOutputStream in = new ObjectOutputStream(savedFileStream);
+    //            sales = (ArrayList<BestSelling>) in.readObject();
+    //            if (!sales.isEmpty()) {
+    //                return true;
+    //            }
+    //        } catch (Exception ex) {
+    //            ex.printStackTrace();
+    //        }
+    //    }
+    //    return false;
+    }

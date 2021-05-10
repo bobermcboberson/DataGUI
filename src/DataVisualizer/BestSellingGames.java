@@ -1,9 +1,6 @@
 package DataVisualizer;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -120,5 +117,22 @@ public class BestSellingGames extends BestSelling implements Serializable {
                 ex.printStackTrace();
             }
         }
+    }
+
+    static public boolean restore() {
+        File savedModelFile = new File("serializedAllBestSellingGames");
+        if (savedModelFile.exists()) {
+            try {
+                FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
+                ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
+                games = (ArrayList<BestSellingGames>) in.readObject();
+                if (!games.isEmpty()) {
+                    return true;
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return false;
     }
 }
