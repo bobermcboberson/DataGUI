@@ -109,7 +109,7 @@ public class BestSellingGames extends BestSelling implements Serializable {
     static public void save() {
         if (games != null && !BestSellingGames.games.isEmpty()) {
             try {
-                File saveModelFile = new File("serializedBestSellingGames");
+                File saveModelFile = new File("serializedAllBestSellingGames");
                 FileOutputStream savedModelFileStream = new FileOutputStream(saveModelFile);
                 ObjectOutputStream out = new ObjectOutputStream(savedModelFileStream);
                 out.writeObject(games);

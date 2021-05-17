@@ -15,6 +15,7 @@ public class BestSelling implements Serializable {
 
     // Constructor
     BestSelling(int ranking, String name, int unitSold, String releaseDate, String creator) {
+        this.ranking = ranking;
         this.name = name;
         this.unitSold = unitSold;
         this.releaseDate = releaseDate;
@@ -69,38 +70,43 @@ public class BestSelling implements Serializable {
     }
 
     static void describeAll() {
-        sales.forEach(sales -> {
-            System.out.println(sales.toString());
-        });
+        if (sales != null) {
+            sales.forEach(sales -> {
+                System.out.println(sales.toString());
+            });
+        }
     }
-    
-    // Methods
-    //static public void save() {
-    //    if (sales != null && !sales.isEmpty()) {
-    //        try {
-    //            File savedFile = new File("serializedAllSales");
-    //            FileOutputStream savedFileStream = new FileOutputStream(savedFile);
-    //            ObjectOutputStream out = new ObjectOutputStream(savedFileStream);
-    //            out.writeObject(sales);
-    //        } catch (Exception ex) {
-    //            ex.printStackTrace();
-    //        }
-    //    }
-    //}
 
-    //static public boolean restore() {
-    //    File savedFile = new File("serializedAllSales");
-    //    if (savedFile.exists())
-    //        try {
-    //            FileInputStream savedFileStream = new FileInputStream(savedFile);
-    //            ObjectOutputStream in = new ObjectOutputStream(savedFileStream);
-    //            sales = (ArrayList<BestSelling>) in.readObject();
-    //            if (!sales.isEmpty()) {
-    //                return true;
-    //            }
-    //        } catch (Exception ex) {
-    //            ex.printStackTrace();
-    //        }
-    //    }
-    //    return false;
+    // Methods
+    static public boolean restore() {
+        // try to read (deserialize) model objects from disk
+        File savedModelFile = new File("serializedAllSales");
+        if (savedModelFile.exists()) {
+            try {
+                FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
+                ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
+                sales  = (ArrayList<BestSelling>)in.readObject();
+                if (!sales.isEmpty()) {
+                    return true;
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return false;
     }
+
+    static public void save() {
+        // write (serialize) the model objects
+        if (sales != null && !sales.isEmpty()) {
+            try {
+                File savedFile = new File("serializedAllBestSales");
+                FileOutputStream savedFileStream = new FileOutputStream(savedFile);
+                ObjectOutputStream out = new ObjectOutputStream(savedFileStream);
+                out.writeObject(sales);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+}

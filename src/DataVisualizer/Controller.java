@@ -48,8 +48,6 @@ public class Controller {
         GamePublish.setCellValueFactory(new PropertyValueFactory<>("publisher"));
         GameDev.setCellValueFactory(new PropertyValueFactory<>("creator"));
 
-        //BestSellingGames.initialize();
-
         boolean hasData = gameRestore();
         if (hasData) {
             updateGameDataUI();
@@ -60,6 +58,7 @@ public class Controller {
         boolean BestSellingGamesRestored = BestSellingGames.restore();
         if (BestSellingGamesRestored) {
             BestSelling.describeAll();
+            System.out.println("Game Restored");
             return true;
         }
         return false;
@@ -71,11 +70,13 @@ public class Controller {
         if (selectedFile != null && selectedFile.exists()) {
             BestSellingGames.read(selectedFile.getPath());
             updateGameDataUI();
+            System.out.println("Game Imported");
         }
     }
 
     public void gameSave() {
         BestSellingGames.save();
+        System.out.println("Game Saved");
     }
 
     void updateGameDataUI() {
